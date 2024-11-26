@@ -1,8 +1,4 @@
-﻿using Catalog.API.Models;
-using Common.CQRS;
-using Marten;
-
-namespace Catalog.API.Features.CreateProduct
+﻿namespace Catalog.API.Features.CreateProduct
 {
     public record CreateProductCommand(string Name, List<string> Categories, string Description, string ImageFile, decimal Price)
         : ICommand<CreateProductResult>;
