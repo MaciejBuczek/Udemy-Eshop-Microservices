@@ -9,7 +9,7 @@
         {
             logger.LogInformation("{@Name} called with {@Query}", nameof(DeleteProductCommandHandler), query);
 
-            var product = await session.LoadAsync<Product>(query.Id, cancellationToken) ?? throw new ProductNotFoundException();
+            var product = await session.LoadAsync<Product>(query.Id, cancellationToken) ?? throw new ProductNotFoundException(query.Id);
             session.Delete(product);
             await session.SaveChangesAsync(cancellationToken);
 

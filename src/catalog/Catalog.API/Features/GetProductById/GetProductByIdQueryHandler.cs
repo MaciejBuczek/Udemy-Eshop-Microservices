@@ -16,7 +16,7 @@
                 return new GetProductResult(product);
             }
 
-            throw new ProductNotFoundException();
+            throw new ProductNotFoundException(query.Id);
         }
     }
 }
