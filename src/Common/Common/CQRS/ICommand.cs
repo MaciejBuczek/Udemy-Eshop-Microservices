@@ -3,7 +3,7 @@
 namespace Common.CQRS
 {
 
-    public interface IComman : ICommand<Unit>
+    public interface ICommand : ICommand<Unit>
     {
     }
 
