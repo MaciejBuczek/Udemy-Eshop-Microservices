@@ -12,7 +12,7 @@
             logger.LogInformation("{@Name} called with {@Query}", nameof(UpdateProductCommandHandler), command);
 
             var product = await session.LoadAsync<Product>(command.Id, cancellationToken)
-                ?? throw new ProductNotFoundException();
+                ?? throw new ProductNotFoundException(command.Id);
             
             product.Name = command.Name;
             product.Categories = command.Categories;

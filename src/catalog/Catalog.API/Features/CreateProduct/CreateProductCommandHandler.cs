@@ -1,9 +1,11 @@
-﻿namespace Catalog.API.Features.CreateProduct
+﻿using Catalog.API.Features.DeleteProduct;
+
+namespace Catalog.API.Features.CreateProduct
 {
     public record CreateProductCommand(string Name, List<string> Categories, string Description, string ImageFile, decimal Price)
         : ICommand<CreateProductResult>;
 
-    public record CreateProductResult (Guid Id);
+    public record CreateProductResult(Guid Id);
 
     internal class CreateProductCommandHandler(IDocumentSession session) : ICommandHandler<CreateProductCommand, CreateProductResult>
     {

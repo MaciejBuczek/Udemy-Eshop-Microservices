@@ -5,3 +5,8 @@ global using Catalog.API.Models;
 global using Common.CQRS;
 global using Marten;
 global using Catalog.API.Exceptions;
+global using FluentValidation;
+global using Common.Behaviors;
+global using Common.Carter;
+global using Common.Exceptions.Handler;
+global using Catalog.API.Data.Initial;

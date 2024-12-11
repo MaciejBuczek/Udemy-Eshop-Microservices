@@ -13,6 +13,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["catalog/Catalog.API/Catalog.API.csproj", "catalog/Catalog.API/"]
+COPY ["Common/Common/Common.csproj", "Common/Common/"]
 RUN dotnet restore "./catalog/Catalog.API/Catalog.API.csproj"
 COPY . .
 WORKDIR "/src/catalog/Catalog.API"
