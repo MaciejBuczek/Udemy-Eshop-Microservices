@@ -9,3 +9,4 @@ global using FluentValidation;
 global using Common.Behaviors;
 global using Common.Carter;
 global using Common.Exceptions.Handler;
+global using Catalog.API.Data.Initial;
