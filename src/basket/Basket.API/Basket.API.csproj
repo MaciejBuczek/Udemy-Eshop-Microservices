@@ -19,4 +19,8 @@
     <Folder Include="Features\StoreBasket\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common\Common.csproj" />
+  </ItemGroup>
+
 </Project>
