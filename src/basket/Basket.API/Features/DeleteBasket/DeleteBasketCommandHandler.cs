@@ -1,7 +1,7 @@
 ﻿namespace Basket.API.Features.DeleteBasket
 {
-    record DeleteBasketResult(bool Success);
-    record DeleteBasketCommand(string UserName) : ICommand<DeleteBasketResult>;
+    public record DeleteBasketResult(bool Success);
+    public record DeleteBasketCommand(string UserName) : ICommand<DeleteBasketResult>;
 
     internal class DeleteBasketCommandHandler(IBasketRepository repository) : ICommandHandler<DeleteBasketCommand, DeleteBasketResult>
     {

@@ -1,7 +1,7 @@
 ﻿namespace Basket.API.Features.StoreBasket
 {
-    record StoreBasketResult(string UserName);
-    record StoreBasketCommand(ShoppingCart ShoppingCart) : ICommand<StoreBasketResult>;
+    public record StoreBasketResult(string UserName);
+    public record StoreBasketCommand(ShoppingCart ShoppingCart) : ICommand<StoreBasketResult>;
 
     internal class StoreBasketCommandHandler(IBasketRepository repository) : ICommandHandler<StoreBasketCommand, StoreBasketResult>
     {

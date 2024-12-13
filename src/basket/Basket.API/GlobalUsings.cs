@@ -9,3 +9,4 @@ global using Basket.API.Data;
 global using Common.CQRS;
 global using Mapster;
 global using MediatR;
+global using FluentValidation;
