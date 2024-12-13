@@ -5,3 +5,7 @@ global using Basket.API.Models;
 global using Marten;
 global using Common.Exceptions;
 global using Basket.API.Exceptions;
+global using Basket.API.Data;
+global using Common.CQRS;
+global using Mapster;
+global using MediatR;

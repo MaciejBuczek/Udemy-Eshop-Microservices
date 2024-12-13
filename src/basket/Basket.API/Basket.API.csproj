@@ -15,12 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\GetBasket\" />
-    <Folder Include="Features\DeleteBasket\" />
-    <Folder Include="Features\StoreBasket\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Common\Common\Common.csproj" />
   </ItemGroup>
 

@@ -13,9 +13,9 @@ builder.Services.AddMarten(config =>
     config.Connection(builder.Configuration.GetConnectionString("Database")!);
     config.Schema.For<ShoppingCart>().Identity(s => s.UserName);
 }).UseLightweightSessions();
+builder.Services.AddScoped<IBasketRepository,  BasketRepository>();
 
 var app = builder.Build();
-
-app.MapGet("/", () => "Hello World!");
+app.MapCarter();
 
 app.Run();
