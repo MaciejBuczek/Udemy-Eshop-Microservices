@@ -1,3 +1,5 @@
+using Common.Exceptions.Handler;
+
 var builder = WebApplication.CreateBuilder(args);
 var assembly = typeof(Program).Assembly;
 
@@ -15,7 +17,15 @@ builder.Services.AddMarten(config =>
 }).UseLightweightSessions();
 builder.Services.AddScoped<IBasketRepository,  BasketRepository>();
 
+builder.Services.AddExceptionHandler<CommonExceptionHandler>();
+builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
+
 var app = builder.Build();
 app.MapCarter();
-
+app.UseExceptionHandler(options => { });
+app.UseHealthChecks("/health",
+    new HealthCheckOptions
+    {
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    });
 app.Run();
