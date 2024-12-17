@@ -1,6 +1,6 @@
 ﻿namespace Basket.API.Data
 {
-    internal class ChashedBaskedRepository(IBasketRepository repository, IDistributedCache cache) : IBasketRepository
+    internal class ChachedBaskedRepository(IBasketRepository repository, IDistributedCache cache) : IBasketRepository
     {
         public async Task<bool> DeleteBasket(string userName, CancellationToken cancellationToken = default)
         {
