@@ -23,7 +23,9 @@ builder.Services.AddStackExchangeRedisCache(config =>
 });
 
 builder.Services.AddExceptionHandler<CommonExceptionHandler>();
-builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
+builder.Services.AddHealthChecks()
+    .AddNpgSql(builder.Configuration.GetConnectionString("Database")!)
+    .AddRedis(builder.Configuration.GetConnectionString("Redis")!);
 
 var app = builder.Build();
 app.MapCarter();
