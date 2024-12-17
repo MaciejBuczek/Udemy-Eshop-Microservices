@@ -1,5 +1,3 @@
-using Common.Exceptions.Handler;
-
 var builder = WebApplication.CreateBuilder(args);
 var assembly = typeof(Program).Assembly;
 
@@ -15,10 +13,19 @@ builder.Services.AddMarten(config =>
     config.Connection(builder.Configuration.GetConnectionString("Database")!);
     config.Schema.For<ShoppingCart>().Identity(s => s.UserName);
 }).UseLightweightSessions();
+
 builder.Services.AddScoped<IBasketRepository,  BasketRepository>();
+builder.Services.Decorate<IBasketRepository, ChachedBaskedRepository>();
+
+builder.Services.AddStackExchangeRedisCache(config =>
+{
+    config.Configuration = builder.Configuration.GetConnectionString("Redis");
+});
 
 builder.Services.AddExceptionHandler<CommonExceptionHandler>();
-builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
+builder.Services.AddHealthChecks()
+    .AddNpgSql(builder.Configuration.GetConnectionString("Database")!)
+    .AddRedis(builder.Configuration.GetConnectionString("Redis")!);
 
 var app = builder.Build();
 app.MapCarter();
