@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API", "basket\Basket
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "discount", "discount", "{7DF7701D-25D2-4D9F-B50C-B37C065AB60D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.GRPC", "discount\Discount.GRPC\Discount.GRPC.csproj", "{B34DC689-EA6A-4A70-89F9-DF69D66C8DA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discount.GRPC", "discount\Discount.GRPC\Discount.GRPC.csproj", "{B34DC689-EA6A-4A70-89F9-DF69D66C8DA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
