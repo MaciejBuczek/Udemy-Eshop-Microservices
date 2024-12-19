@@ -10,17 +10,32 @@ namespace Discount.GRPC.Services
     {
         public override async Task<CouponModel> GetDiscount(GetDiscountRequest request, ServerCallContext context)
         {
-            logger.LogInformation("Discount is retrieved for Productname: {productName}", request.ProductName);
-
             var coupon = await dbContext.Coupons.FirstOrDefaultAsync(x => x.ProductName.Equals(request.ProductName))
                 ?? new Coupon { ProductName = request.ProductName, Description = "No Coupon", Amount = 0 };
             var couponModel = coupon.Adapt<CouponModel>();
+
+            logger.LogInformation("Discount is retrieved for Productname: {productName}", request.ProductName);
+
             return couponModel;
         }
 
-        public override Task<CouponModel> CreateDiscount(CreateDiscountRequest request, ServerCallContext context)
+        public override async Task<CouponModel> CreateDiscount(CreateDiscountRequest request, ServerCallContext context)
         {
-            return base.CreateDiscount(request, context);
+            if(request.Coupon is null)
+            {
+                throw new RpcException(new Status(StatusCode.InvalidArgument, "Invalid required argument"));
+            }
+
+            var coupon = request.Coupon.Adapt<Coupon>();
+
+            dbContext.Coupons.Add(coupon);
+            await dbContext.SaveChangesAsync();
+
+            logger.LogInformation("Discount is created as Productname: {productName}", request.Coupon.ProductName);
+
+            var couponModel = coupon.Adapt<CouponModel>();
+
+            return couponModel;
         }
 
         public override Task<CouponModel> UpdateDiscount(UpdateDiscountRequest request, ServerCallContext context)
