@@ -48,9 +48,15 @@ namespace Discount.GRPC.Services
             return couponModel;
         }
 
-        public override Task<DeleteDiscountResponse> DeleteDiscount(DeleteDiscountRequest request, ServerCallContext context)
+        public override async Task<DeleteDiscountResponse> DeleteDiscount(DeleteDiscountRequest request, ServerCallContext context)
         {
-            return base.DeleteDiscount(request, context);
+            var couponModel = await GetDiscount(new GetDiscountRequest { ProductName = request.ProductName }, context) ?? throw new RpcException(new Status(StatusCode.InvalidArgument, "Invalid required argument"));
+            dbContext.ChangeTracker.Clear();
+
+            var coupon = couponModel.Adapt<Coupon>();
+            dbContext.Coupons.Remove(coupon);
+            await dbContext.SaveChangesAsync();
+            return new DeleteDiscountResponse { Success = true };
         }
     }
 }
