@@ -32,6 +32,8 @@
                 Payment = payment
             };
 
+            order.AddDomainEvent(new OrderCreatedEvent(order));
+
             return order;
         }
 
@@ -42,6 +44,8 @@
             BillingAddress = billingAddress;
             Payment = payment;
             Status = status;
+
+            AddDomainEvent(new OderUpdatedEvent(this));
         }
 
         public void Add(ProductId productId, int quantity, decimal price)
