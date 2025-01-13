@@ -10,8 +10,10 @@
             Price = price;
         }
 
-        public OrderId OrderId { get; private set; }
-        public ProductId ProductId { get; private set; }
+        protected OrderItem() { }
+
+        public OrderId OrderId { get; private set; } = default!;
+        public ProductId ProductId { get; private set; } = default!;
         public int Quantity { get; private set; }
         public decimal Price { get; private set; }
     }
