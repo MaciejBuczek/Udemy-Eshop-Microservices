@@ -7,7 +7,7 @@
             builder.HasKey(o => o.Id);
 
             builder.Property(o => o.Id)
-                .HasConversion(orderId => orderId.Id, dbId => OrderId.Of(dbId);
+                .HasConversion(orderId => orderId.Id, dbId => OrderId.Of(dbId));
 
             builder.HasOne<Customer>()
                 .WithMany()

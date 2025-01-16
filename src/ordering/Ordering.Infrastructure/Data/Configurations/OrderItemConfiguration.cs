@@ -5,6 +5,7 @@
         public void Configure(EntityTypeBuilder<OrderItem> builder)
         {
             builder.HasKey(o => o.Id);
+            builder.Property(o => o.Id).HasConversion(orderItemId => orderItemId.Id, dbId => OrderItemId.Of(dbId));
             
             builder.Property(o => o.OrderId)
                 .HasConversion(orderItemId => orderItemId.Id, dbId => OrderId.Of(dbId));
