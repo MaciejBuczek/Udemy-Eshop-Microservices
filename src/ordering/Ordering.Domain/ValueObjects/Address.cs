@@ -12,22 +12,23 @@
 
         protected Address() { }
 
-        private Address(string firstName, string lastName, string emailAddress, string country, string state, string zipCode)
+        private Address(string firstName, string lastName, string emailAddress, string addressLine, string country, string state, string zipCode)
         {
             FirstName = firstName;
             LastName = lastName;
             EmailAddress = emailAddress;
+            AddressLine = addressLine;
             Country = country;
             State = state;
             ZipCode = zipCode;
         }
 
-        public static Address Of(string firstName, string lastName, string emailAddress, string country, string state, string zipCode)
+        public static Address Of(string firstName, string lastName, string emailAddress, string addressLine, string country, string state, string zipCode)
         {
             ArgumentException.ThrowIfNullOrEmpty(firstName);
             ArgumentException.ThrowIfNullOrEmpty(emailAddress);
 
-            return new Address(firstName, lastName, emailAddress, country, state, zipCode);
+            return new Address(firstName, lastName, emailAddress, addressLine, country, state, zipCode);
         }
     }
 }
