@@ -15,10 +15,10 @@
         private static Order CreateOrder(OrderDTO orderDTO)
         {
 
-            var shippingAddress = CreateAddressFromDTO(orderDTO.ShippingAddress);
-            var billingAddress = CreateAddressFromDTO(orderDTO.BillingAddress);
+            var shippingAddress = DomainModelParser.ParseAddress(orderDTO.ShippingAddress);
+            var billingAddress = DomainModelParser.ParseAddress(orderDTO.BillingAddress);
 
-            var payment = CreatePaymentFromDTO(orderDTO.Payment);
+            var payment = DomainModelParser.ParsePayment(orderDTO.Payment);
 
             var order = Order.Create(
                 OrderId.Of(Guid.NewGuid()),
@@ -34,28 +34,6 @@
             }
 
             return order;
-        }
-
-        private static Address CreateAddressFromDTO(AddressDTO address)
-        {
-            return Address.Of(
-                address.FirstName,
-                address.LastName,
-                address.EmailAddress,
-                address.AddressLine,
-                address.Country,
-                address.State,
-                address.ZipCode);
-        }
-
-        private static Payment CreatePaymentFromDTO(PaymentDTO paymentDTO)
-        {
-            return Payment.Of(
-                paymentDTO.CardName,
-                paymentDTO.CardNumber,
-                paymentDTO.Expiration,
-                paymentDTO.Cvv,
-                paymentDTO.PaymentMethod);
         }
     }
 }
