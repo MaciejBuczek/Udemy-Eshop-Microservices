@@ -7,3 +7,6 @@ global using Ordering.Domain.Models;
 global using Ordering.Application.Data;
 global using Ordering.Domain.ValueObjects;
 global using Ordering.Application.Exceptions;
+global using Common.Behaviors;
+global using Microsoft.Extensions.DependencyInjection;
+global using System.Reflection;
