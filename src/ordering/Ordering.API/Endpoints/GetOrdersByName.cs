@@ -13,11 +13,11 @@
 
                 return Results.Ok(response);
             })
-            .WithName("GetOrdersByName")
+            .WithName("Get Orders")
             .Produces<CreateOrderResponse>(StatusCodes.Status201Created)
             .ProducesProblem(StatusCodes.Status400BadRequest)
-            .WithSummary("Get Orders By Name")
-            .WithDescription("Get Orders By Order Name");
+            .WithSummary("Get Orders")
+            .WithDescription("Get Paginated Orders");
         }
     }
 }
