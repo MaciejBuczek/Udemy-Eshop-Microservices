@@ -10,4 +10,5 @@ global using Ordering.Application.Orders.Commands.CreateOrder;
 global using Ordering.Application.Orders.Commands.UpdateOrder;
 global using Ordering.Application.Orders.Commands.DeleteOrder;
 global using Ordering.Application.Orders.Queries.GetOrdersByName;
+global using Ordering.Application.Orders.Queries.GetOrdersByCustomer;
 
