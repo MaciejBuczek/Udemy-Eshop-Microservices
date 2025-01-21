@@ -8,3 +8,4 @@ global using MediatR;
 global using Ordering.Application.DTOs;
 global using Ordering.Application.Orders.Commands.CreateOrder;
 global using Ordering.Application.Orders.Commands.UpdateOrder;
+global using Ordering.Application.Orders.Commands.DeleteOrder;
