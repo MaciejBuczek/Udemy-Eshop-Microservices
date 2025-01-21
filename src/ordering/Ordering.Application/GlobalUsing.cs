@@ -10,3 +10,6 @@ global using Ordering.Application.Exceptions;
 global using Common.Behaviors;
 global using Microsoft.Extensions.DependencyInjection;
 global using System.Reflection;
+global using MediatR;
+global using Microsoft.Extensions.Logging;
+global using Ordering.Domain.Events;

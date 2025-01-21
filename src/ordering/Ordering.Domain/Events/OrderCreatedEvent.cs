@@ -1,4 +1,4 @@
 ﻿namespace Ordering.Domain.Events
 {
-    internal record OrderCreatedEvent(Order Order) : IDomainEvent;
+    public record OrderCreatedEvent(Order Order) : IDomainEvent;
 }
