@@ -35,9 +35,9 @@ namespace Ordering.Infrastructure.Data.Extensions
 
         private static async Task SeedProductAsync(AppDbContext context)
         {
-            if (!await context.Producsts.AnyAsync())
+            if (!await context.Products.AnyAsync())
             {
-                await context.Producsts.AddRangeAsync(InitialData.Products);
+                await context.Products.AddRangeAsync(InitialData.Products);
                 await context.SaveChangesAsync();
             }
         }
