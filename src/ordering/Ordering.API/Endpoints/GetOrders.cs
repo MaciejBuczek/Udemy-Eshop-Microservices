@@ -1,6 +1,4 @@
-﻿
-
-namespace Ordering.API.Endpoints
+﻿namespace Ordering.API.Endpoints
 {
     public record GetOrdersResponse(PaginatedResult<OrderDTO> Orders);
     public class GetOrders : ICarterModule
@@ -14,6 +12,11 @@ namespace Ordering.API.Endpoints
 
                 return Results.Ok(response);
             })
+            .WithName("GetOrdersByCustomer")
+            .Produces<CreateOrderResponse>(StatusCodes.Status201Created)
+            .ProducesProblem(StatusCodes.Status400BadRequest)
+            .WithSummary("Get Orders By Customer")
+            .WithDescription("Get Orders By Customer Id");
         }
     }
 }
