@@ -8,7 +8,7 @@
                 .Include(o => o.OrderItems)
                 .AsNoTracking()
                 .Where(o => o.OrderName.Name.Contains(query.Name))
-                .OrderBy(o => o.OrderName)
+                .OrderBy(o => o.OrderName.Name)
                 .ToListAsync(cancellationToken);
 
             var orderDTOs = orders.Select(o => DomainModelParser.ParseOrderDTO(o));

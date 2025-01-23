@@ -5,9 +5,11 @@
         public async Task<UpdateOrderResult> Handle(UpdateOrderCommand command, CancellationToken cancellationToken)
         {
             var orderId = OrderId.Of(command.Order.Id);
-            var order = await dbContext.Orders.FindAsync(orderId, cancellationToken) ?? 
+            var order = await dbContext.Orders.FindAsync([orderId, cancellationToken], cancellationToken: cancellationToken) ?? 
                 throw new OrderNotFoundException(command.Order.Id.ToString());
             
+            UpdateOrder(order, command.Order);
+
             dbContext.Orders.Update(order);
             await dbContext.SaveChangesAsync(cancellationToken);
 
