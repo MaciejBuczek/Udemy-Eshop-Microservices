@@ -12,7 +12,7 @@
 
                 return Results.Ok(response);
             })
-            .WithName("GetOrdersByCustomer")
+            .WithName("GetOrders")
             .Produces<CreateOrderResponse>(StatusCodes.Status201Created)
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .WithSummary("Get Orders By Customer")
