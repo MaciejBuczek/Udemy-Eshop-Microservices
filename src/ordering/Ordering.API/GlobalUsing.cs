@@ -13,3 +13,4 @@ global using Ordering.Application.Orders.Queries.GetOrdersByName;
 global using Ordering.Application.Orders.Queries.GetOrdersByCustomer;
 global using Common.Pagination;
 global using Ordering.Application.Orders.Queries.GetOrders;
+global using Common.Carter;

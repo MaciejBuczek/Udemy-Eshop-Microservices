@@ -1,11 +1,10 @@
-﻿
-namespace Ordering.API
+﻿namespace Ordering.API
 {
     public static class DependencyInjection
     {
         public static IServiceCollection AddApiServices(this IServiceCollection services)
         {
-            services.AddCarter();
+            services.AddCarter(new StaticDependencyContextCatalog(typeof(Program).Assembly));
             return services;
         }
 
