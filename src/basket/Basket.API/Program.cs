@@ -1,4 +1,5 @@
 using Discount.GRPC;
+using Common.Messaging.MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 var assembly = typeof(Program).Assembly;
@@ -36,6 +37,8 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
     };
     return handler;
 });
+
+builder.Services.AddMessageBroker(builder.Configuration);
 
 builder.Services.AddExceptionHandler<CommonExceptionHandler>();
 builder.Services.AddHealthChecks()
