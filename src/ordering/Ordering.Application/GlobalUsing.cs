@@ -14,3 +14,5 @@ global using MediatR;
 global using Microsoft.Extensions.Logging;
 global using Ordering.Domain.Events;
 global using Common.Pagination;
+global using Common.Messaging.MassTransit;
+global using Microsoft.Extensions.Configuration;
