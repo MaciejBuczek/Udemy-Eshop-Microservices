@@ -16,3 +16,6 @@ global using Ordering.Domain.Events;
 global using Common.Pagination;
 global using Common.Messaging.MassTransit;
 global using Microsoft.Extensions.Configuration;
+global using Common.Messaging.Events;
+global using MassTransit;
+global using Ordering.Application.Orders.Commands.CreateOrder;
