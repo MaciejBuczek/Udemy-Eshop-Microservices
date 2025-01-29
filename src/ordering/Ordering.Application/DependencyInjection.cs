@@ -11,8 +11,8 @@
                 config.AddOpenBehavior(typeof(LoggingBehavior<,>));
             });
 
+            services.AddFeatureManagement();
             services.AddMessageBroker(configuration, Assembly.GetExecutingAssembly());
-
 
             return services;
         }

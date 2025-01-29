@@ -24,7 +24,5 @@
 
             return new CreateOrderCommand(orderDTO);
         }
-
-        public Order
     }
 }

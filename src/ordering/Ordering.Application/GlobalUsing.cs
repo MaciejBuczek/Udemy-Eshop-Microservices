@@ -19,4 +19,4 @@ global using Microsoft.Extensions.Configuration;
 global using Common.Messaging.Events;
 global using MassTransit;
 global using Ordering.Application.Orders.Commands.CreateOrder;
-global using Ordering.Application.Helpers;
+global using Microsoft.FeatureManagement;
