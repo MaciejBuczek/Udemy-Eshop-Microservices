@@ -15,3 +15,6 @@ global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 global using Microsoft.Extensions.Caching.Distributed;
 global using System.Text.Json;
 global using Common.Exceptions.Handler;
+global using Basket.API.DTOs;
+global using Common.Messaging.Events;
+global using MassTransit;
