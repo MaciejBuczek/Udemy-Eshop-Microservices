@@ -1,6 +1,6 @@
 ﻿namespace Ordering.API.Endpoints
 {
-    public record GetOrdersByNameResponse(IEnumerable<OrderDTO> orders);
+    public record GetOrdersByNameResponse(IEnumerable<OrderDTO> Orders);
 
     public class GetOrdersByName : ICarterModule
     {
