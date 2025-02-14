@@ -13,5 +13,26 @@
 
         [Post("/basket-service/basket/checkout")]
         Task<CheckoutBasketResponse> CheckoutBasket(CheckoutBasketRequest request);
+
+        public async Task<ShoppingCartModel> LoadUserBasket()
+        {
+            var username = "swn";
+            ShoppingCartModel shoppingCartModel;
+            try
+            {
+                var response = await GetBasket(username);
+                shoppingCartModel = response.ShoppingCart;
+            }
+            catch (Exception)
+            {
+                shoppingCartModel = new ShoppingCartModel
+                {
+                    UserName = username,
+                    Items = []
+                };
+            }
+
+            return shoppingCartModel;
+        }
     }
 }
