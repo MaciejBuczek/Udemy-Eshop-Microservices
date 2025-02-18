@@ -151,15 +151,15 @@
 
                 <div class="d-block my-3">
                     <div class="custom-control custom-radio">
-                        <input asp-for="Order.PaymentMethod" id="credit" name="paymentMethod" type="radio" value="Credit card" class="custom-control-input" checked required>
+                        <input asp-for="Order.PaymentMethod" id="credit" name="paymentMethod" type="radio" value="1" class="custom-control-input" checked required>
                         <label asp-for="Order.PaymentMethod" class="custom-control-label" for="credit">Credit card</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input asp-for="Order.PaymentMethod" id="debit" name="paymentMethod" type="radio" value="Debit card" class="custom-control-input" required>
+                        <input asp-for="Order.PaymentMethod" id="debit" name="paymentMethod" type="radio" value="2" class="custom-control-input" required>
                         <label asp-for="Order.PaymentMethod" class="custom-control-label" for="debit">Debit card</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input asp-for="Order.PaymentMethod" id="paypal" name="paymentMethod" type="radio" value="Paypal" class="custom-control-input" required>
+                        <input asp-for="Order.PaymentMethod" id="paypal" name="paymentMethod" type="radio" value="3" class="custom-control-input" required>
                         <label asp-for="Order.PaymentMethod" class="custom-control-label" for="paypal">Paypal</label>
                     </div>
                 </div>

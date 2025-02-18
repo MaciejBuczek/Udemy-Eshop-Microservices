@@ -16,11 +16,9 @@ namespace Shopping.Web.Pages
         public async Task<IActionResult> OnPostCheckOutAsync()
         {
             logger.LogInformation("Checkout button clicked");
+            Order.PaymentMethod = "1";
 
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            Cart = await basketService.LoadUserBasket();
 
             Order.CustomerId = new Guid("58c49479-ec65-4de2-86e7-033c546291aa");
             Order.Username = Cart.UserName;
