@@ -37,11 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Messaging", "Common\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIGateways", "APIGateways", "{0B34F957-6074-44D1-8FDA-ABB685B1B406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpAPIGateway", "APIGAteways\YarpAPIGateway\YarpAPIGateway.csproj", "{BCA90B49-552C-4D6D-8201-892E6C5B479E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YarpAPIGateway", "APIGAteways\YarpAPIGateway\YarpAPIGateway.csproj", "{BCA90B49-552C-4D6D-8201-892E6C5B479E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{26F64B4D-1AB6-410A-BD4D-8EBE35890FF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Web", "WebApps\Shopping.Web\Shopping.Web.csproj", "{345EFBD6-B190-4A0E-BE9B-56D918FF3457}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shopping.Web", "WebApps\Shopping.Web\Shopping.Web.csproj", "{345EFBD6-B190-4A0E-BE9B-56D918FF3457}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
